@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
 var passport = require('passport');
 var createSendToken = require('../utilities/jwt.js')
+
 var user = require('../controllers/users');
 var scheduler = require('../controllers/scheduler');
 var googleAuth = require('../controllers/googleAuth');

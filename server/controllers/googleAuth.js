@@ -28,8 +28,8 @@ module.exports = function(req, res){
         }, function(err, response, profile){
             User.findOne({
                 googleId: profile.sub
-            }, function(err, foundUser){
-                if(foundUser) return createSendToken(foundUser, res);
+            }, function(err, existingUser){
+                if(existingUser) return createSendToken(existingUser, res);
 
                 var newUser = new User();
                 newUser.googleId = profile.sub;
