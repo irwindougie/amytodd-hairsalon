@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Amy Todd's Hair Salon</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/yo.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/mine.css">
+</head>
+
+<body>
+    <div class="container" ng-cloak>
+        <navbar></navbar>
+        <div class="row">
+            <div class="ui-view-container">
+                <div ui-view></div>
+            </div>
+        </div>
+        <alert></alert>
+    </div>
+
+    <!--scripts-->
+    <!--Libraries-->
+    <script src="library/jquery/dist/jquery.js"></script>
+    <script src="library/angular/angular.js"></script>
+    <script src="library/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="library/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="library/angular-animate/angular-animate.js"></script>
+    <!--Files-->
+    <script src="js/app.js"></script>
+    <script src="js/config/directives.js"></script>
+    <script src="js/config/notification.js"></script>
+    <script src="js/config/routes.js"></script>
+    <script src="js/config/auth/auth.js"></script>
+    <script src="js/config/auth/AuthInterceptor.js"></script>
+    <script src="js/config/auth/AuthToken.js"></script>
+    <script src="js/config/auth/ValidateEquals.js"></script>
+    <script src="js/common/apiService.js"></script>
+    <script src="js/common/navbar.js"></script>
+    <script src="js/users/registerCtrl.js"></script>
+    <script src="js/users/loginCtrl.js"></script>
+    <script src="js/scheduler/schedulerCtrl.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<nav class="header">
+    <ul class="nav nav-pills pull-right">
+        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+        <li ui-sref-active="active"><a ui-sref="services">Services</a></li>
+        <li ng-show="isAuthenticated()" ui-sref-active="active"><a ui-sref="schedule">Schedule Appointment</a></li>
+        <li ng-hide="isAuthenticated()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+        <li ng-show="isAuthenticated()" ui-sref-active="active"><a ui-sref="logout">Logout</a></li>
+    </ul>
+    <h3><a href="/" class="text-muted" style="text-decoration: none;">{{nav.logo}}</a></h3>
+</nav>
