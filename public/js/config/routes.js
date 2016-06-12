@@ -1,17 +1,17 @@
-(function(){
-    var app = angular.module('routes', ['ui.router']);
-    
-    app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider) {
-        
+(function () {
+    var app = angular.module('routes', ['ui.router', 'satellizer']);
+
+    app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$authProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $authProvider) {
+
         $locationProvider.html5Mode(true).hashPrefix('!');
-        $urlRouterProvider.otherwise('/');   
-        
+        $urlRouterProvider.otherwise('/');
+
         $stateProvider
             .state('home', {
                 url: '/',
                 templateUrl: 'js/home/home.html'
             })
-                        
+
             .state('services', {
                 url: '/services'
             })
@@ -35,8 +35,22 @@
                 controller: 'LogoutCtrl'
             })
 
-            $httpProvider.interceptors.push('authInterceptor');
+        $authProvider.loginUrl = '/api/auth/login';
+        $authProvider.signupUrl = '/api/auth/register';
+
+        $authProvider.google({
+            clientId: '652711667071-5jbc0tder8vflra4bfehcd7i9vv1s9on.apps.googleusercontent.com',
+            url: '/api/auth/google'
+        })
+
+        $authProvider.facebook({
+            clientId: '494950647373050',
+            url: '/api/auth/facebook'
+        })
+
+
+        $httpProvider.interceptors.push('authInterceptor');
     }])
-    
-    app.run(['$state', '$stateParams', function($state, $stateParams){}])
+
+    app.run(['$state', '$stateParams', function ($state, $stateParams) { }])
 })();

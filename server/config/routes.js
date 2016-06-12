@@ -11,9 +11,9 @@ module.exports = function (app) {
   app.post('/api/auth/facebook', facebookAuth);
   app.post('/api/auth/google', googleAuth);
 
-  app.post('/api/register', passport.authenticate('local-register'), createSendToken);
-  app.post('/api/login', passport.authenticate('local-login'), createSendToken);
-  app.post('/api/logout', function (req, res) {
+  app.post('/api/auth/register', passport.authenticate('local-register'), createSendToken);
+  app.post('/api/auth/login', passport.authenticate('local-login'), createSendToken);
+  app.post('/api/auth/logout', function (req, res) {
     req.logout();
     delete req.session;
     res.end();

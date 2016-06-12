@@ -6,5 +6,6 @@
     <button ng-disabled="register.$invalid" type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
     <br />
     <a class="text-muted pull-right" ui-sref="register">Create account</a>
-    <button type="button" class="btn btn-lg btn-default btn-block" ng-click="google()">Google</button>
+    <button type="button" class="btn btn-lg btn-default btn-block" ng-click="authenticate('google')">Google</button>
+    <button type="button" class="btn btn-lg btn-default btn-block" ng-click="authenticate('facebook')">Facebook</button>
 </form>

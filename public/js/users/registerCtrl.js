@@ -1,8 +1,8 @@
 var app = angular.module('app');
 
-app.controller('RegisterCtrl', function ($scope, alert, apiService) {
+app.controller('RegisterCtrl', function ($scope, alert, $auth) {
     $scope.submit = function () {
-        apiService.register($scope.email, $scope.password)
+        $auth.signup({email: $scope.email, password: $scope.password})
             .success(function (res) {
                 alert('success', 'Account Created!', 'Welcome, ' + res.user.email + '!');
             })
