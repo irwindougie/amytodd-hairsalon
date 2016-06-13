@@ -3,7 +3,6 @@ var moment = require('moment');
 var Secret = require('../config/secrets.js').JWT_SECRET;
 
 module.exports = function(user, res){
-    if(user.user) user=user.user;
     var payload = {
 		sub: user.id,
 		exp: moment().add(10, 'days').unix()

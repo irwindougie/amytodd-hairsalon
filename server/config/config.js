@@ -5,10 +5,13 @@ var path = require('path'),
     development: {
       rootPath: rootPath,
       db: 'mongodb://localhost/booking',
-      port: process.env.PORT || 8001
+      port: process.env.PORT || 8001,
+      app_url: function(){return 'http://localhost:' + this.port;}
     },
     production: {
       rootPath: rootPath,
-      port: process.env.PORT || 80
+      db: '',
+      port: process.env.PORT || 80,
+      app_url: function(){return 'http://amytodd.timefinds.com'}
     }
   };
