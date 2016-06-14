@@ -1,5 +1,4 @@
 node_modules
-library
 typings
 .vscode
 AuthSecrets.js
